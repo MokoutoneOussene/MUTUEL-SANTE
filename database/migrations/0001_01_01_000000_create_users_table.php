@@ -14,17 +14,9 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->string('matricule')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
-            $table->foreignId('services_id')->nullable()->constrained('services')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('telephone')->nullable();
-            $table->string('niveau')->nullable();
-            $table->string('poste')->nullable();
-            $table->string('role')->nullable();
-            $table->string('pj1')->nullable();
-            $table->string('pj2')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
