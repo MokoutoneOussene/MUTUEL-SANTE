@@ -16,4 +16,24 @@ class PageController extends Controller
     {
         return view('pages.index');
     }
+
+    /**
+     * Display the authentication page.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function auth()
+    {
+        return view('pages.auth.connexion');
+    }
+
+    /**
+     * Display the registration page.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function register()
+    {
+        return view('pages.auth.inscription');
+    }
 }

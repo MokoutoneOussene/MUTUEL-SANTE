@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('code')->nullable();
             $table->string('nom');
             $table->string('prenom');
             $table->string('nom_jeune_fille')->nullable();
             $table->string('matricule')->nullable();
+            $table->string('photo')->nullable();
 
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -31,6 +33,9 @@ return new class extends Migration
             $table->string('num_rccm')->nullable();
             $table->string('lieu_exercice')->nullable();
             $table->string('responsabilite')->nullable();
+
+            $table->string('statut')->nullable();
+            $table->string('file')->nullable();
 
             $table->foreignId('role_id')->nullable()->constrained('roles')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('section_id')->nullable()->constrained('sections')->onDelete()->onUpdate('cascade');
