@@ -38,13 +38,13 @@ return new class extends Migration
             $table->string('file')->nullable();
 
             $table->foreignId('role_id')->nullable()->constrained('roles')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('section_id')->nullable()->constrained('sections')->onDelete()->onUpdate('cascade');
-            $table->foreignId('region_ordinal_id')->nullable()->constrained('region_ordinals')->onDelete()->onUpdate('cascade');
-            $table->foreignId('region_id')->nullable()->constrained('regions')->onDelete()->onUpdate('cascade');
-            $table->foreignId('ville_id')->nullable()->constrained('villes')->onDelete()->onUpdate('cascade');
-            $table->foreignId('diplome_id')->nullable()->constrained('diplomes')->onDelete()->onUpdate('cascade');
-            $table->foreignId('autre_diplome_id')->nullable()->constrained('autre_diplomes')->onDelete()->onUpdate('cascade');
-            $table->foreignId('fonction_id')->nullable()->constrained('fonctions')->onDelete()->onUpdate('cascade');
+            $table->foreignId('section_id')->nullable()->constrained('sections')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('region_ordinal_id')->nullable()->constrained('region_ordinals')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('region_id')->nullable()->constrained('regions')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('ville_id')->nullable()->constrained('villes')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('diplome_id')->nullable()->constrained('diplomes')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('autre_diplome_id')->nullable()->constrained('autre_diplomes')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('fonction_id')->nullable()->constrained('fonctions')->onDelete('cascade')->onUpdate('cascade');
 
             $table->string('password')->nullable();
             $table->rememberToken();

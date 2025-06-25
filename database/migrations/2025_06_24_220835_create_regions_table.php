@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('libelle')->nullable();
 
-            $table->foreignId('region_ordinals_id')->nullable()->constrained('region_ordinals')->onDelete()->onUpdate('cascade');
+            $table->foreignId('region_ordinal_id')->nullable()->constrained('region_ordinals')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });
