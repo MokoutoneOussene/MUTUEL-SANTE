@@ -32,7 +32,7 @@ class PageController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function register()
+    public function inscription()
     {
         return view('pages.auth.inscription');
     }
