@@ -33,6 +33,7 @@ return new class extends Migration
             $table->string('num_rccm')->nullable();
             $table->string('lieu_exercice')->nullable();
             $table->string('responsabilite')->nullable();
+            $table->integer('montant_cotisation')->nullable();
 
             $table->string('statut')->nullable();
             $table->string('file')->nullable();
