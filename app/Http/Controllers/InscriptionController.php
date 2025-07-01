@@ -36,4 +36,24 @@ class InscriptionController extends Controller
     
         return redirect('/login')->with('success', 'Inscription réussie !');
     }
+
+    public function updatecompte(Request $request)
+    {
+        $user = auth()->user();
+
+        $request->validate([
+            'nom' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'pays' => 'nullable|string|max:100',
+            'ville' => 'nullable|string|max:100',
+            'diplome' => 'nullable|string|max:100',
+            'annee_diplome' => 'nullable|string|max:10',
+        ]);
+
+        $user->update($request->only([
+            'nom', 'email', 'pays', 'ville', 'diplome', 'annee_diplome'
+        ]));
+
+        return back()->with('success', 'Profil mis à jour avec succès !');
+}
 }

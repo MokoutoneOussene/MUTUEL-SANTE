@@ -28,15 +28,12 @@
     <div class="card shadow-sm border border-success p-4">
 
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h4 class="text-success">Liste des cotisations annuelles</h4>
-        <button class="btn btn-success" style="background-color:#009A00;" data-bs-toggle="modal" data-bs-target="#cotisationModal">
-            + Ajouter cotisation
-        </button>
+        <h4 class="text-success">Mes cotisations annuelles</h4>
     </div>
 
     <div class="row mb-3 justify-content-center">
         <div class="col-md-6">
-            <input type="text" id="searchInput" class="form-control" placeholder="Rechercher par nom ou montant...">
+            <input type="text" id="searchInput" class="form-control" placeholder="Rechercher ...">
         </div>
     </div>
 
@@ -66,60 +63,19 @@
     </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="cotisationModal" tabindex="-1" aria-labelledby="cotisationModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header" style="background-color: #6c757d;">
-        <h5 class="modal-title text-white" id="cotisationModalLabel">Ajouter une cotisation annuelle</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label>Nom du cotisant</label>
-                    <input type="text" class="form-control" required>
-                </div>
-                <div class="col-md-3">
-                    <label>Montant (F CFA)</label>
-                    <input type="number" class="form-control" required>
-                </div>
-                <div class="col-md-3">
-                    <label>Année</label>
-                    <input type="number" class="form-control" value="{{ date('Y') }}" required>
-                </div>
-            </div>
 
-            <div class="mb-3">
-                <label>Date</label>
-                <input type="date" class="form-control" required>
-            </div>
-
-            <div class="text-end">
-                <button type="submit" class="btn btn-success">Enregistrer</button>
-            </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 </div>
 @endsection
 @section('scripts')
 <script>
     const cotisations = [
-        { id: 1, nom: 'Jean Dupont', montant: 15000, annee: '2025', date: '2025-01-10' },
-        { id: 2, nom: 'Alice Kaboré', montant: 20000, annee: '2025', date: '2025-01-12' },
-        { id: 3, nom: 'Paul Yaméogo', montant: 18000, annee: '2025', date: '2025-01-15' },
-        { id: 4, nom: 'Moussa Diallo', montant: 16000, annee: '2025', date: '2025-01-18' },
-        { id: 5, nom: 'Fatoumata Sidibé', montant: 22000, annee: '2025', date: '2025-01-21' },
-        { id: 6, nom: 'Salif Sawadogo', montant: 17000, annee: '2025', date: '2025-01-23' },
-        { id: 7, nom: 'Amadou Koné', montant: 19000, annee: '2025', date: '2025-01-25' },
-        { id: 8, nom: 'Nafissatou Cissé', montant: 21000, annee: '2025', date: '2025-01-28' },
-        { id: 9, nom: 'Issa Ouédraogo', montant: 20000, annee: '2025', date: '2025-01-30' },
-        { id: 10, nom: 'Marie Zongo', montant: 18000, annee: '2025', date: '2025-02-02' }
-    ];
+        { id: 1, nom: 'Alice Kaboré', montant: 15000, annee: '2019', date: '2019-01-10' },
+        { id: 2, nom: 'Alice Kaboré', montant: 20000, annee: '2020', date: '2020-01-12' },
+        { id: 3, nom: 'Alice Kaboré', montant: 18000, annee: '2021', date: '2021-01-15' },
+        { id: 4, nom: 'Alice Kaboré', montant: 16000, annee: '2022', date: '2022-01-18' },
+        { id: 5, nom: 'Alice Kaboré', montant: 22000, annee: '2023', date: '2023-01-21' },
+        { id: 6, nom: 'Alice Kaboré', montant: 17000, annee: '2024', date: '2024-01-23' },
+       ];
 
     let filteredCotisations = [...cotisations];
     let currentPage = 1;

@@ -95,4 +95,17 @@ class AuthController extends Controller
 
         return redirect()->back()->with('success', 'Inscription réussie. Vous recevez un email de confirmation.');
     }
+
+    
+    
+    public function update(Request $request, $id)
+    {
+        $utilisateur = User::findOrFail($id);
+        $utilisateur->update($request->all());
+    
+        return redirect()->route('profil.show', $id)->with('success', 'Profil mis à jour avec succès.');
+    }
+    
+
+
 }
