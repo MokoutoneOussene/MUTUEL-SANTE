@@ -35,7 +35,7 @@ return new class extends Migration
             $table->string('responsabilite')->nullable();
             $table->integer('montant_cotisation')->nullable();
 
-            $table->string('statut')->nullable();
+            $table->string('statut')->default('inactif'); // actif, inactif, suspendu, radié
             $table->string('file')->nullable();
 
             $table->foreignId('role_id')->nullable()->constrained('roles')->onDelete('cascade')->onUpdate('cascade');
